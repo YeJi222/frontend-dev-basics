@@ -1,6 +1,7 @@
+// node ex07
+
 /**
  * 자바스크립트 객체2: function 타입
- * 
  */
 
 // 일반함수(실행코드블락이 있는 함수, 관례대로 소문자로 시작한다.)
@@ -17,5 +18,5 @@ var MyObject = function(name, age) {
 var o1 = new MyObject('둘리', 10);
 var o2 = new MyObject('마이콜', 10);
 
-console.log(o1);
-console.log(o2);
+console.log(o1); // MyObject { name: '둘리', age: 10 }
+console.log(o2); // MyObject { name: '마이콜', age: 10 }
