@@ -1,6 +1,7 @@
+// node ex03
+
 /**
  * undefined와 null의 동치(equals) 비교
- * 
  */
 
 var myVar1 = undefined; // 명시적으로 undefined 대입
@@ -29,10 +30,10 @@ console.log(parseInt('11') + 1);        // 12
 //    1) primitive type: 값의 동일성 
 //    2) object type: 객체의 동일성 
 
-
-console.log('4' === 4);
-console.log(true === 1);
-console.log('abc' === new String('abc'))
-console.log(2 === 4);
-console.log(new String('hello') === new Number('hello'))
-console.log('hello' === 'hello')
+// 값뿐만 아니라 타입도 같아야 한다
+console.log('4' === 4); // false
+console.log(true === 1); // false
+console.log('abc' === new String('abc')) // false
+console.log(2 === 4); // false (값 다름)
+console.log(new String('hello') === new Number('hello')) // false
+console.log('hello' === 'hello') // true

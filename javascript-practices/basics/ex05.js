@@ -32,7 +32,7 @@ i = 10 + 10
 // 개행의 역할
 // 1. ;(세미콜론) 대체하는 역할
 i = 10
-console.log(i)
+console.log(i) // 10
 
 // 2.
 // 하지만
@@ -42,5 +42,6 @@ a
 2
 +
 4
-console.log(a)
-console.log(a)
+
+console.log(a) // 6
+console.log(a) // 6
