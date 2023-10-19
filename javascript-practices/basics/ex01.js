@@ -1,3 +1,5 @@
+// $ node ex01
+
 console.log('hello world');
 console.info('hello world');
 console.warn('hello world');

@@ -1,3 +1,5 @@
+// node ex02
+
 /**
  * 변수와 자료형
  * 
@@ -10,9 +12,14 @@
  * [객체]
  * - object
  *  1. new 생성자함수() 사용해서 생성
- *  2. 리터럴
- *      {}, [], //
+ *  2. 리터럴(프로그래밍에서 자료를 표기하는 방식, 데이터 그 자체를 의미, 변수에 넣는 변하지 않는 데이터) 
+ *     - 변수를 선언하면서 동시에 값을 지정해주는 방식 
+ *     {}, [], // RegExp 정규 표현식
+ *     cf) 정규 표현식은 /로 감싸진 패턴을 리터럴로 사용한다 
+ *         ex) const regexp1 = /^abc/;  // --> /패턴/
+ *             const regexp2 = /^abc/gi; // --> /패턴/플래그
  *  3. null
+ * 
  * - function
  *  1. new Function() 사용해서 생성
  *  2. 리터럴
@@ -36,27 +43,24 @@
  * 
  *  3. 사용자 객체
  *     javascript 엔진이 실행되면서 생성하는 객체
- *    
- * 
  */
 
-console.log("=== 기본타입(undefined, number, string, boolean) ======")
+console.log("=== 기본타입(undefined, number, string, boolean) ===")
 // myVariable      // reference error
-var u = undefined; // var u; 동일, 자바스크립트는 정의와 선언을 구분하지 않는다.
+var u = undefined; // var u; 동일, 자바스크립트는 정의와 선언을 구분하지 않는다. 자동으로 선언되기 때문
 var i = 10;
 var s = 'Hello World';
 var b = true;
 
-console.log(u + ":" + typeof(u));
-console.log(i + ":" + typeof(i));
-console.log(s + ":" + typeof(s));
-console.log(b + ":" + typeof(b));
+console.log(u + ":" + typeof(u)); // undefined
+console.log(i + ":" + typeof(i)); // number
+console.log(s + ":" + typeof(s)); // string
+console.log(b + ":" + typeof(b)); // boolean
 
 console.log("=== 객체타입(object) ======")
 var i2 = new Number(10);
 var s2 = new String('hello');
 var b2 = new Boolean(true);
-
 var o = new Object();
 var a = new Array();
 var re = new RegExp();
@@ -66,12 +70,13 @@ var a2 = [];
 var re2 = /^js$/gi;
 var n = null;
 
-console.log(i2 + ":" + typeof(i2) + ":" + (i2 instanceof(Number)));
-console.log(s2 + ":" + typeof(s2) + ":" + (s2 instanceof(String)));
-console.log(b2 + ":" + typeof(b2) + ":" + (b2 instanceof(Boolean)));
-console.log(o  + ":" + typeof(o)  + ":" + (o instanceof(Object)));
+// object, true
+console.log(i2 + ":" + typeof(i2) + ":" + (i2 instanceof(Number))); 
+console.log(s2 + ":" + typeof(s2) + ":" + (s2 instanceof(String))); 
+console.log(b2 + ":" + typeof(b2) + ":" + (b2 instanceof(Boolean))); 
+console.log(o  + ":" + typeof(o)  + ":" + (o instanceof(Object))); 
 console.log(a  + ":" + typeof(a)  + ":" + (a instanceof(Array)));
-console.log(d  + ":" + typeof(d)  + ":" + (d instanceof(Date)));
+console.log(d  + ":" + typeof(d)  + ":" + (d instanceof(Date))); 
 console.log(a  + ":" + typeof(a)  + ":" + (a instanceof(Array)));
 console.log(d  + ":" + typeof(d)  + ":" + (d instanceof(Date)));
 console.log(o2  + ":" + typeof(o2)  + ":" + (o2 instanceof(Object)));
@@ -91,12 +96,13 @@ var f2 = function(a, b) {
 
 var f3 = new Function('a', 'b', 'return a+b;');
 
+// function, true
 console.log(f1(10, 20) + ":" + typeof(f1)  + ":" + (f1 instanceof(Function)));
 console.log(f2(10, 20) + ":" + typeof(f2)  + ":" + (f2 instanceof(Function)));
 console.log(f3(10, 20) + ":" + typeof(f3)  + ":" + (f3 instanceof(Function)));
 
-
 // 유사 객체
-console.log("=== 원시 타입도 메소드를 호출 할 수 있다.(유사객체) ======");
-console.log(b2.valueOf());
-console.log(b.valueOf());   // console.log(new Boolen(b).valueOf())
+console.log("=== 원시 타입도 메소드를 호출 할 수 있다.(유사객체) ===");
+// Boolean 객체의 원시값을 반환 
+console.log(b2.valueOf()); // true
+console.log(b.valueOf()); // console.log(new Boolen(b).valueOf())
