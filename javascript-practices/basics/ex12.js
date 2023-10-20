@@ -1,6 +1,7 @@
+// node ex12
+
 /**
  * Array 확장(prototype 기반의 확장)
- * 
  */
 
 Array.prototype.remove = function(index) {
@@ -33,22 +34,23 @@ Array.prototype.insert = function(index, value) {
            this.splice(index++, 0, e);
         }.bind(this);
 
+        f = f.bind(this);
+
         value.forEach(f);  
     } else {
         this.splice(index, 0, value);
     }
 }
 
-
 // List 함수 사용하기
 var a = [1, 2, 4];
-console.log(a);
+console.log(a); // [ 1, 2, 4 ]
 
 a.insert(2, 3);
-console.log(a);
+console.log(a); // [ 1, 2, 3, 4 ]
 
 a.remove(2);
-console.log(a);
+console.log(a); // [ 1, 2, 4 ]
 
 a.insert(2, ['a', 'b', 'c']);
-console.log(a);
+console.log(a); // [ 1, 2, 'a', 'b', 'c', 4 ]

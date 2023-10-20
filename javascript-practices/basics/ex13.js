@@ -1,7 +1,8 @@
+// node ex13
+
 /**
  * 1. string primitive type 
  * 2. String 객체 함수: String.prototype.*
- * 
  */
 
 // 배열처럼 접근이 가능하다.
@@ -19,10 +20,10 @@ console.log(str4);
 
 // casting
 var str5 = "5" + 5;
-console.log(str5);
+console.log(str5); // 55
 
 var str6 = "boolean:" + true;
-console.log(str6);
+console.log(str6); // boolean:true
 
 // 객체 함수
 var str7 = "string1 string2 string3";
@@ -33,8 +34,8 @@ console.log(index);
 index = str7.indexOf('string4');     // -1
 console.log(index);
 
-var str8 = str7.substring(10 /*first index*/, 13 /* last index-1 */);
-console.log(str8);
+var str8 = str7.substring(10 /*first index*/, 13 /* last index-1 */); // idx가 10 ~ 12자리
+console.log(str8); // rin
 
 var a = str7.split(" ");
-console.log(a);
+console.log(a); // [ 'string1', 'string2', 'string3' ]
