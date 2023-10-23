@@ -6,6 +6,7 @@ var _jQuery = function(elements){
 }
 
 _jQuery.prototype.jquery = '0.0.1.beta';
+
 _jQuery.prototype.click = function(handler){
 	for(var i = 0 ; i < this.length ; i++){
 		this[i].addEventListener('click', handler);

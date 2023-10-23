@@ -6,6 +6,10 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("#p1").text('안녕하세요');
+		$("#p2").text('<strong>안녕하세요</strong>');
+		console.log($('#p3').text()); // 태그 빼고 가져옴 
+		console.log($('#p4').text()); // 태그 빼고 가져옴 
 	}, 1000);
 });
 </script>
