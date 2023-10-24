@@ -17,7 +17,19 @@ $(function(){
 			type: 'get',
 			dataType: 'json',
 			success: function(response){
-				console.log(response);
+				if(response.result !== "success"){
+					console.error(response.message);
+					return;
+				}
+				
+				var vo = response.data;
+				
+				var html = "";
+				html += ("<h3>" + vo.no + "</h3>");
+				html += ("<h4>" + vo.name + "</h4>");
+				html += ("<h5>" + vo.contents + "</h5>");
+				
+				$("#data").html(html);
 			},
 			error: function(xhr, status, error){
 				console.error(status, error);

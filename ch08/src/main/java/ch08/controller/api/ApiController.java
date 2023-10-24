@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ch08.dto.JsonResult;
 import ch08.vo.GuestbookVo;
 
 @Controller
@@ -24,14 +25,12 @@ public class ApiController {
 	
 	@ResponseBody
 	@RequestMapping("/json")
-	public GuestbookVo json() {
+	public JsonResult json() {
 		GuestbookVo vo = new GuestbookVo();
 		vo.setNo(1L);
 		vo.setName("둘리");
 		vo.setContents("호이~");
 		
-		System.out.println("guestbook : " + vo);
-		
-		return vo;
+		return JsonResult.success(vo);
 	}
 }

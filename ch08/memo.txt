@@ -9,3 +9,13 @@ ch08
   
 ch08.controller.test
 ch08.controller.api
+
+{
+	result: "success" or "fail"
+	data: {no: 1, name: ".."} or null
+	message: null or "error"
+}
+
+swagger vs spring restdoc
+postman
+talend(chrome plugin)
