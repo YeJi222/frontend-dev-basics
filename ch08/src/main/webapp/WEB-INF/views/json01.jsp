@@ -11,13 +11,24 @@
 <script>
 $(function(){
 	$('button').click(function(){
-		$('#data').load('${pageContext.request.contextPath }/api/text');
-	})
-})
+		$.ajax({
+			url: '${pageContext.request.contextPath }/api/json',
+			async: true,
+			type: 'get',
+			dataType: 'json',
+			success: function(response){
+				console.log(response);
+			},
+			error: function(xhr, status, error){
+				console.error(status, error);
+			}
+		});
+	});
+});
 </script>
 </head>
 <body>
-	<h1>AJAX Test: Test Format Data</h1>
+	<h1>AJAX Test: JSON Format Data: $.ajax({}) 함수 사용하기</h1>
 	<button>데이터 가져오기</button>
 	<div id='data'></div>
 </body>
