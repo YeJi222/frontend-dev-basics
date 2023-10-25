@@ -40,7 +40,6 @@ var fetch = function() {
 	})	
 }
 
-
 $(function(){
 	var dialogDelete = $("#dialog-delete-form").dialog({
 		autoOpen: false,
@@ -54,15 +53,7 @@ $(function(){
 				
 				// 후처리
 				// 1. response.data(no) 가지고 있는 <li data+no='{no}' > 찾아서 삭제
-				// var removeNo = $("li").attr("data-no");
-				$("li").each(function(){
-					var liDataNo = $(this).attr("data-no");
-					// console.log(liDataNo, no);
-				    
-				    if(liDataNo == no){
-						$("li[data-no='" + no + "']").remove();
-					}
-				})
+				$("li[data-no='" + no + "']").remove();
 				
 				// 2. dialogDelete.dialog('close');
 				$(this).dialog('close');
