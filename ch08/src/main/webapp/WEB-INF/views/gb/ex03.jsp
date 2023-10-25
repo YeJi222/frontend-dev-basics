@@ -54,9 +54,21 @@ $(function(){
 				
 				// 후처리
 				// 1. response.data(no) 가지고 있는 <li data+no='{no}' > 찾아서 삭제
+				// var removeNo = $("li").attr("data-no");
+				$("li").each(function(){
+					var liDataNo = $(this).attr("data-no");
+					// console.log(liDataNo, no);
+				    
+				    if(liDataNo == no){
+						$("li[data-no='" + no + "']").remove();
+					}
+				})
+				
 				// 2. dialogDelete.dialog('close');
+				$(this).dialog('close');
 				
 				// 폼의 input value reset;
+				$('#password-delete').val("");			
 			},
 			"취소": function() {
 				$(this).dialog('close');
@@ -67,8 +79,6 @@ $(function(){
 		}
 	
 	});
-	
-	
 	
 	// 메세지 삭제 버튼 click 이벤트 처리(Live Event)
 	$(document).on('click', '#list-guestbook li a', function(event) {
@@ -98,6 +108,7 @@ $(function(){
 				</form>
 				<ul id="list-guestbook"></ul>
 			</div>
+			
 			<div id="dialog-delete-form" title="메세지 삭제" style="display:none">
   				<p class="validateTips normal">작성시 입력했던 비밀번호를 입력하세요.</p>
   				<p class="validateTips error" style="display:none">비밀번호가 틀립니다.</p>
