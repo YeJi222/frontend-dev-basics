@@ -33,11 +33,14 @@ public class WebConfig implements WebMvcConfigurer {
 		return viewResolver;
 	}
 	
+	// HTTP 요청 및 응답의 본문 데이터를 Java 문자열로 변환하거나 
+	// Java 문자열을 HTTP 응답 본문으로 변환하는 데 사용
 	public StringHttpMessageConverter stringHttpMessageConverter() {
 		StringHttpMessageConverter messageConverter = new StringHttpMessageConverter();
 		
 		messageConverter.setSupportedMediaTypes(
 			Arrays.asList(
+				// "text/html" 미디어 타입을 UTF-8 인코딩으로 지정
 				new MediaType("text", "html", Charset.forName("utf-8"))
 			)
 		);
